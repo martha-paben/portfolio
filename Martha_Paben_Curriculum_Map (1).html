@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Curriculum Map — Martha K. Paben</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+  :root {
+    --navy: #1F4E79;
+    --navy-light: #2E6DA4;
+    --navy-pale: #D6E4F0;
+    --navy-ultra: #EEF4FA;
+    --gold: #C9A84C;
+    --gold-light: #F5E6C2;
+    --gray-dark: #2D2D2D;
+    --gray-mid: #595959;
+    --gray-light: #E8E8E8;
+    --white: #FFFFFF;
+
+    /* Modality colors */
+    --mod-inperson: #1F4E79;
+    --mod-virtual: #2E86AB;
+    --mod-elearning: #4CAF50;
+    --mod-otj: #E07B39;
+    --mod-aiplay: #7B2D8B;
+    --mod-sim: #C0392B;
+    --mod-assess: #C9A84C;
+    --mod-mentor: #1B6CA8;
+    --mod-rubric: #0B7A75;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: #F4F7FB;
+    color: var(--gray-dark);
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 816px;
+    margin: 0 auto;
+  }
+
+  /* ── COVER / HEADER ── */
+  .cover {
+    background: var(--navy);
+    color: white;
+    padding: 48px 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    right: 60px; bottom: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .cover-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .cover h1 span { color: var(--gold); }
+  .cover-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 28px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item { font-size: 12px; color: rgba(255,255,255,0.65); }
+  .cover-meta-item strong { color: white; font-weight: 600; display: block; font-size: 13px; }
+  .cover-byline {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+  .cover-byline strong { color: rgba(255,255,255,0.85); }
+
+  /* ── LEGEND ── */
+  .legend-bar {
+    background: white;
+    padding: 16px 30px;
+    border-bottom: 1px solid var(--gray-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .legend-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-right: 8px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+  }
+  .badge-inperson { background: var(--mod-inperson); }
+  .badge-virtual { background: var(--mod-virtual); }
+  .badge-elearning { background: var(--mod-elearning); }
+  .badge-otj { background: var(--mod-otj); }
+  .badge-aiplay { background: var(--mod-aiplay); }
+  .badge-sim { background: var(--mod-sim); }
+  .badge-assess { background: var(--mod-assess); }
+  .badge-mentor { background: var(--mod-mentor); }
+
+  /* ── SECTION HEADERS ── */
+  .section-wrap { padding: 30px 30px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .section-number {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .section-title-block p {
+    font-size: 12px;
+    color: var(--gray-mid);
+    margin-top: 2px;
+  }
+  .role-tag {
+    margin-left: auto;
+    background: var(--navy-pale);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 4px;
+  }
+
+  /* ── CURRICULUM GRID ── */
+  .curriculum-grid {
+    display: grid;
+    gap: 16px;
+  }
+  .week-row {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--gray-light);
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  .week-header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: stretch;
+  }
+  .week-label {
+    background: var(--navy);
+    color: white;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .week-label .wk { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; }
+  .week-label .wk-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; line-height: 1; }
+  .week-label .wk-range { font-size: 10px; opacity: 0.6; margin-top: 2px; }
+  .week-content { padding: 16px 20px; }
+  .week-topic {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .week-desc {
+    font-size: 12px;
+    color: var(--gray-mid);
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .week-activities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .week-loops {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--gray-light);
+  }
+  .loop-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gold);
+    background: var(--gold-light);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .loop-tag::before { content: '↩'; font-size: 11px; }
+
+  .outcome-bar {
+    background: var(--navy-ultra);
+    border-left: 3px solid var(--navy-light);
+    padding: 8px 12px;
+    font-size: 11px;
+    color: var(--navy);
+    margin-top: 10px;
+    border-radius: 0 4px 4px 0;
+  }
+  .outcome-bar strong { font-weight: 700; }
+
+  /* ── AI/SIM CALLOUT ── */
+  .tech-callout {
+    background: linear-gradient(135deg, #F3E8FF, #EDE0FF);
+    border: 1px solid #C4A0E8;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #5B1F8A;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .tech-callout.sim {
+    background: linear-gradient(135deg, #FFE8E8, #FFD5D5);
+    border-color: #E4A0A0;
+    color: #8A1F1F;
+  }
+  .tech-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .tech-callout strong { font-weight: 700; display: block; margin-bottom: 2px; }
+
+  /* ── PROGRESSION BRIDGE ── */
+  .progression-bridge {
+    margin: 0 30px;
+    padding: 20px 24px;
+    background: var(--navy);
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bridge-side { font-size: 12px; flex: 1; }
+  .bridge-side h3 { font-family: 'Playfair Display', serif; font-size: 15px; margin-bottom: 6px; }
+  .bridge-side ul { padding-left: 16px; opacity: 0.8; }
+  .bridge-side li { margin-bottom: 3px; font-size: 11px; }
+  .bridge-center {
+    flex: 0 0 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .bridge-arrow {
+    font-size: 28px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .bridge-label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* ── DESIGN PRINCIPLES FOOTER ── */
+  .principles {
+    margin: 30px 30px;
+    padding: 28px 32px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--gray-light);
+  }
+  .principles h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .principle-item {
+    padding: 14px 16px;
+    background: var(--navy-ultra);
+    border-radius: 8px;
+    border-left: 3px solid var(--navy);
+  }
+  .principle-item h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .principle-item p {
+    font-size: 11px;
+    color: var(--gray-mid);
+    line-height: 1.5;
+  }
+
+  .page-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 16px;
+    font-size: 11px;
+    margin-top: 40px;
+  }
+  .page-footer strong { color: white; }
+
+  .divider { height: 1px; background: var(--gray-light); margin: 0 40px; }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    @page {
+      size: letter portrait;
+      margin: 0.5in;
+    }
+
+    body {
+      background: white !important;
+      font-size: 11px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cover { padding: 24px 32px 20px; page-break-after: avoid; }
+    .cover h1 { font-size: 26px; }
+    .cover-sub { font-size: 13px; }
+    .cover-meta { gap: 16px; }
+
+    .legend-bar { padding: 8px 32px; page-break-after: avoid; flex-wrap: wrap; gap: 5px; }
+
+    .section-wrap { padding: 16px 32px; }
+    .section-header { page-break-after: avoid; margin-bottom: 10px; }
+    .section-number { width: 36px; height: 36px; font-size: 16px; }
+    .section-title-block h2 { font-size: 18px; }
+
+    .week-row { page-break-inside: avoid; margin-bottom: 8px; box-shadow: none; border: 1px solid #ccc; }
+    .week-header { grid-template-columns: 80px 1fr; }
+    .week-label { padding: 12px 8px; }
+    .week-label .wk-num { font-size: 22px; }
+    .week-content { padding: 10px 14px; }
+    .week-topic { font-size: 12px; margin-bottom: 4px; }
+    .week-desc { font-size: 10px; margin-bottom: 6px; }
+    .badge { font-size: 8px; padding: 2px 6px; }
+    .loop-tag { font-size: 8px; }
+    .outcome-bar { font-size: 9px; padding: 5px 10px; margin-top: 6px; }
+    .tech-callout { padding: 6px 10px; margin-top: 6px; font-size: 9px; }
+    .tech-icon { font-size: 12px; }
+
+    .progression-bridge {
+      margin: 0 32px;
+      padding: 20px 24px;
+      page-break-inside: avoid;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+    }
+    .bridge-side { flex: 1; }
+    .bridge-side h3 { font-size: 13px; }
+    .bridge-side li { font-size: 10px; }
+    .bridge-center {
+      flex: 0 0 100px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+    }
+    .bridge-arrow { font-size: 24px; margin-bottom: 4px; }
+    .bridge-label { font-size: 9px; }
+
+    .principles { margin: 16px 32px; padding: 14px 18px; page-break-inside: avoid; page-break-after: avoid; break-after: avoid; }
+    .principles h3 { font-size: 14px; margin-bottom: 10px; }
+    .principles-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .principle-item { padding: 10px 12px; }
+    .principle-item h4 { font-size: 10px; }
+    .principle-item p { font-size: 9px; }
+
+    .page-footer { margin-top: 12px; padding: 10px; font-size: 9px; page-break-before: avoid; break-before: avoid; }
+    .divider { margin: 0 32px; }
+
+    .cover, .week-label, .progression-bridge, .page-footer,
+    .badge, .loop-tag, .outcome-bar, .tech-callout,
+    .principle-item, .legend-bar {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag" style="visibility:hidden">&nbsp;</div>
+  <h1>Retail Learning &amp;<br><span>Curriculum Map</span></h1>
+  <div class="cover-sub">Sales Associate → Department Supervisor Career Pathway</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>Industry</strong>Retail</div>
+    <div class="cover-meta-item"><strong>Roles Covered</strong>Sales Associate · Department Supervisor</div>
+    <div class="cover-meta-item"><strong>Total Duration</strong>14 Weeks</div>
+  </div>
+  <div class="cover-byline">Designed by <strong>Martha K. Paben</strong> · Learning &amp; Development Leader · linkedin.com/in/marthapaben</div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-bar" style="display: flex; align-items: center; gap: 0;">
+  <span class="legend-title" style="margin-right: 12px; align-self: center;">Modalities</span>
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      <span class="badge badge-inperson">In-Person</span>
+      <span class="badge badge-virtual">Virtual / VILT</span>
+      <span class="badge badge-elearning">eLearning</span>
+      <span class="badge badge-otj">On-the-Job</span>
+      <span class="badge badge-mentor">Mentoring</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      <span class="badge badge-aiplay" style="background:var(--mod-aiplay)">AI Role-Play</span>
+      <span class="badge badge-sim" style="background:var(--mod-sim)">Simulation</span>
+      <span class="badge badge-assess" style="background:var(--mod-assess)">Assessment</span>
+      <span class="badge" style="background:var(--mod-rubric)">Competency Rubric</span>
+    </div>
+  </div>
+</div>
+
+<!-- PART 1: SALES ASSOCIATE -->
+<div class="section-wrap">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title-block">
+      <h2>Sales Associate Onboarding Curriculum</h2>
+      <p>Weeks 1–6 · Foundational skills for frontline retail success</p>
+    </div>
+    <div class="role-tag">Sales Associate</div>
+  </div>
+
+  <div class="curriculum-grid">
+
+    <!-- WEEK 1 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#1F4E79">
+          <span class="wk">Week</span>
+          <span class="wk-num">1</span>
+          <span class="wk-range">Days 1–5</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Orientation &amp; Company Culture</div>
+          <div class="week-desc">Welcome, mission, values, store policies, safety, and team introductions. New associates build their foundation of belonging and understand what it means to represent the brand.</div>
+          <div class="week-activities">
+            <span class="badge badge-inperson">In-Person Orientation</span>
+            <span class="badge badge-elearning">eLearning: Company Values &amp; Policies</span>
+            <span class="badge badge-mentor">Mentor Introduction</span>
+            <span class="badge badge-otj">Store Walkthrough</span>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Associate can describe the company mission, demonstrate safety protocols, and navigate store systems independently.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 2 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#1F4E79">
+          <span class="wk">Week</span>
+          <span class="wk-num">2</span>
+          <span class="wk-range">Days 6–10</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Product Knowledge &amp; Store Operations</div>
+          <div class="week-desc">Deep dive into the product catalog, inventory systems, merchandising standards, and point-of-sale operations. Associates learn what they sell and how the store runs.</div>
+          <div class="week-activities">
+            <span class="badge badge-elearning">eLearning: Product Catalog Modules</span>
+            <span class="badge badge-inperson">In-Person: POS Training</span>
+            <span class="badge badge-otj">Supervised Floor Shadowing</span>
+            <span class="badge badge-assess">Product Knowledge Quiz</span>
+          </div>
+          <div class="tech-callout sim">
+            <span class="tech-icon">🖥️</span>
+            <div><strong>Simulation: POS &amp; Inventory System</strong>Practice processing transactions, returns, and inventory lookups in a safe, consequence-free environment before going live on the floor.</div>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Associate demonstrates 80%+ product knowledge accuracy and can process standard transactions independently.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 3 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#1F4E79">
+          <span class="wk">Week</span>
+          <span class="wk-num">3</span>
+          <span class="wk-range">Days 11–15</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Customer Service Fundamentals</div>
+          <div class="week-desc">Active listening, communication styles, handling complaints, de-escalation, and building genuine customer connections. Associates learn that service is the product.</div>
+          <div class="week-activities">
+            <span class="badge badge-virtual">VILT: Communication Styles Workshop</span>
+            <span class="badge badge-elearning">eLearning: De-escalation Techniques</span>
+            <span class="badge badge-otj">Observed Customer Interactions</span>
+            <span class="badge badge-mentor">Mentor Debrief</span>
+            <span class="badge" style="background:var(--mod-aiplay)">AI Role-Play</span>
+            <span class="badge" style="background:var(--mod-rubric)">Competency Rubric</span>
+          </div>
+          <div class="tech-callout">
+            <span class="tech-icon">🤖</span>
+            <div><strong>AI Role-Play: Difficult Customer Scenario</strong>Using AI-powered conversation tools such as Yoodli or Second Nature, associates practice handling a frustrated customer in a safe, judgment-free environment — receiving real-time feedback on tone, empathy, and resolution before facing live situations.</div>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Associate demonstrates active listening and de-escalation techniques in role-play with 80%+ observer rating.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 4 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#1F4E79">
+          <span class="wk">Week</span>
+          <span class="wk-num">4</span>
+          <span class="wk-range">Days 16–20</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Sales Skills &amp; Techniques</div>
+          <div class="week-desc">Needs-based selling, consultative questioning, product recommendations, upselling, and closing techniques. Associates connect what they know to how they sell.</div>
+          <div class="week-activities">
+            <span class="badge badge-inperson">In-Person: Sales Methodology Workshop</span>
+            <span class="badge badge-elearning">eLearning: Consultative Selling</span>
+            <span class="badge badge-otj">Supervised Sales Floor Practice</span>
+            <span class="badge" style="background:var(--mod-aiplay)">AI Role-Play</span>
+          </div>
+          <div class="week-loops">
+            <span class="loop-tag">Builds on: Product Knowledge (Week 2)</span>
+            <span class="loop-tag">Builds on: Customer Service Fundamentals (Week 3)</span>
+          </div>
+          <div class="tech-callout">
+            <span class="tech-icon">🤖</span>
+            <div><strong>AI Role-Play: Sales Conversation Practice</strong>Using AI-powered conversation tools such as Yoodli or Second Nature, associates rehearse consultative selling conversations with an AI customer persona — practicing needs discovery, product recommendations, and handling objections before live floor interactions.</div>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Associate completes 3 observed sales conversations meeting consultative selling criteria.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 5 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#1F4E79">
+          <span class="wk">Week</span>
+          <span class="wk-num">5</span>
+          <span class="wk-range">Days 21–25</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Applied Practice &amp; Shadowing</div>
+          <div class="week-desc">Associates take the lead on the floor with structured mentoring support. Real customer interactions, real products, real moments — with a safety net. Reflection and feedback loops reinforce learning.</div>
+          <div class="week-activities">
+            <span class="badge badge-otj">Independent Floor Practice</span>
+            <span class="badge badge-mentor">Daily Mentor Check-Ins</span>
+            <span class="badge badge-virtual">Virtual: Weekly Reflection Session</span>
+            <span class="badge" style="background:var(--mod-rubric)">Competency Rubric</span>
+          </div>
+          <div class="week-loops">
+            <span class="loop-tag">Reinforces: Product Knowledge (Week 2)</span>
+            <span class="loop-tag">Reinforces: Customer Service (Week 3)</span>
+            <span class="loop-tag">Reinforces: Sales Techniques (Week 4)</span>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Associate independently manages customer interactions and receives satisfactory supervisor observation rating.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 6 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#1F4E79">
+          <span class="wk">Week</span>
+          <span class="wk-num">6</span>
+          <span class="wk-range">Days 26–30</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Assessment, Certification &amp; Goal Setting</div>
+          <div class="week-desc">Formal skills assessment, competency sign-off, 30-day review with manager, and individual development planning. Associates complete onboarding and set the trajectory for their growth.</div>
+          <div class="week-activities">
+            <span class="badge badge-assess">Competency Assessment</span>
+            <span class="badge badge-inperson">30-Day Review with Manager</span>
+            <span class="badge badge-elearning">eLearning: Goal Setting Module</span>
+            <span class="badge" style="background:var(--mod-rubric)">Competency Rubric</span>
+          </div>
+          <div class="week-loops">
+            <span class="loop-tag">Cumulative review: Weeks 1–5</span>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Associate achieves certification sign-off and has an active 90-day development plan in place.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROGRESSION BRIDGE -->
+<div style="margin: 0 30px; display: grid; grid-template-columns: 1fr 180px 1fr; align-items: center; column-gap: 12px;">
+
+  <!-- Left box -->
+  <div style="background: #1F4E79; border-radius: 12px; padding: 20px 24px; color: white;">
+    <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: white;">Sales Associate graduates with:</h3>
+    <ul style="padding-left: 16px; opacity: 0.85; margin: 0;">
+      <li style="margin-bottom: 5px; font-size: 11px;">Product &amp; operations mastery</li>
+      <li style="margin-bottom: 5px; font-size: 11px;">Consultative selling skills</li>
+      <li style="margin-bottom: 5px; font-size: 11px;">Customer service excellence</li>
+      <li style="margin-bottom: 5px; font-size: 11px;">Independent floor confidence</li>
+      <li style="margin-bottom: 0; font-size: 11px;">Foundational brand knowledge</li>
+    </ul>
+  </div>
+
+  <!-- Center box -->
+  <div style="background: #1F4E79; border-radius: 12px; padding: 20px 16px; text-align: center; color: white;">
+    <div style="font-size: 44px; color: #C9A84C; line-height: 1; margin-bottom: 10px;">→</div>
+    <div style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #C9A84C; font-weight: 700;">Career<br>Progression</div>
+  </div>
+
+  <!-- Right box -->
+  <div style="background: #1F4E79; border-radius: 12px; padding: 20px 24px; color: white;">
+    <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 10px; color: white;">Department Supervisor builds on:</h3>
+    <ul style="padding-left: 16px; opacity: 0.85; margin: 0;">
+      <li style="margin-bottom: 5px; font-size: 11px;">All associate-level competencies</li>
+      <li style="margin-bottom: 5px; font-size: 11px;">Now leads others through same journey</li>
+      <li style="margin-bottom: 5px; font-size: 11px;">Translates personal skills into coaching</li>
+      <li style="margin-bottom: 5px; font-size: 11px;">Adds operational &amp; people leadership</li>
+      <li style="margin-bottom: 0; font-size: 11px;">Owns team performance outcomes</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- PART 2: DEPARTMENT SUPERVISOR -->
+<div class="section-wrap">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div class="section-title-block">
+      <h2>Department Supervisor Development Curriculum</h2>
+      <p>Weeks 1–8 · Leadership skills for frontline people leaders</p>
+    </div>
+    <div class="role-tag">Department Supervisor</div>
+  </div>
+
+  <div class="curriculum-grid">
+
+    <!-- WEEKS 1-2 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#2E6DA4">
+          <span class="wk">Weeks</span>
+          <span class="wk-num">1–2</span>
+          <span class="wk-range">Days 1–10</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Leadership Foundations &amp; Role Transition</div>
+          <div class="week-desc">The shift from individual contributor to people leader. Understanding supervisor responsibilities, management expectations, accountability frameworks, and leading a team through the same onboarding journey they completed as an associate.</div>
+          <div class="week-activities">
+            <span class="badge badge-inperson">In-Person: Supervisor Orientation</span>
+            <span class="badge badge-elearning">eLearning: Leadership Mindset &amp; Expectations</span>
+            <span class="badge badge-mentor">Senior Leader Shadowing</span>
+            <span class="badge badge-virtual">VILT: Role Transition Workshop</span>
+          </div>
+          <div class="week-loops">
+            <span class="loop-tag">Revisits: Company Culture (Associate Week 1) — now as a culture carrier</span>
+            <span class="loop-tag">Revisits: Customer Service Fundamentals — now as a service coach</span>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Supervisor articulates the key differences between associate and supervisory roles and identifies 3 priorities for their first 30 days.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKS 3-4 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#2E6DA4">
+          <span class="wk">Weeks</span>
+          <span class="wk-num">3–4</span>
+          <span class="wk-range">Days 11–20</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Coaching, Feedback &amp; Performance Conversations</div>
+          <div class="week-desc">Delivering effective feedback, coaching in the moment, conducting performance conversations, and building a culture where associates want to grow. The supervisor learns to teach what they know.</div>
+          <div class="week-activities">
+            <span class="badge badge-virtual">VILT: Coaching Frameworks Workshop</span>
+            <span class="badge badge-elearning">eLearning: Giving &amp; Receiving Feedback</span>
+            <span class="badge badge-otj">Live Coaching Practice with Associate</span>
+            <span class="badge badge-mentor">Manager Observation &amp; Debrief</span>
+            <span class="badge" style="background:var(--mod-aiplay)">AI Role-Play</span>
+            <span class="badge" style="background:var(--mod-rubric)">Competency Rubric</span>
+          </div>
+          <div class="week-loops">
+            <span class="loop-tag">Builds on: Sales Techniques (Associate Week 4) — now coaching others to sell</span>
+          </div>
+          <div class="tech-callout">
+            <span class="tech-icon">🤖</span>
+            <div><strong>AI Role-Play: Coaching Conversation Practice</strong>Using AI-powered conversation tools such as Yoodli or Second Nature, supervisors practice delivering difficult feedback and performance coaching conversations — building confidence and refining language before live situations with real team members.</div>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Supervisor delivers a structured coaching conversation to a team member and receives satisfactory manager observation rating.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKS 5-6 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#2E6DA4">
+          <span class="wk">Weeks</span>
+          <span class="wk-num">5–6</span>
+          <span class="wk-range">Days 21–30</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Operations, Scheduling &amp; Business Acumen</div>
+          <div class="week-desc">Department P&amp;L basics, scheduling, inventory management, shrink reduction, merchandising standards, and operational reporting. Supervisors learn to run the business, not just the team.</div>
+          <div class="week-activities">
+            <span class="badge badge-elearning">eLearning: Retail Business Metrics</span>
+            <span class="badge badge-inperson">In-Person: Scheduling &amp; Inventory Workshop</span>
+            <span class="badge badge-otj">Supervised Department Management</span>
+          </div>
+          <div class="week-loops">
+            <span class="loop-tag">Builds on: Store Operations (Associate Week 2) — now owning them</span>
+          </div>
+          <div class="tech-callout sim">
+            <span class="tech-icon">🖥️</span>
+            <div><strong>Simulation: Department Operations Scenario</strong>Supervisors navigate a simulated week of department management — making scheduling decisions, responding to inventory alerts, and handling operational challenges in a consequence-free environment before leading independently.</div>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Supervisor independently manages department scheduling for one week and produces accurate inventory report.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKS 7-8 -->
+    <div class="week-row">
+      <div class="week-header">
+        <div class="week-label" style="background:#2E6DA4">
+          <span class="wk">Weeks</span>
+          <span class="wk-num">7–8</span>
+          <span class="wk-range">Days 31–40</span>
+        </div>
+        <div class="week-content">
+          <div class="week-topic">Team Development, Onboarding Others &amp; Capstone</div>
+          <div class="week-desc">Supervisors learn to onboard and develop new associates — closing the loop on their own journey. They plan their team's development, demonstrate leadership competencies, and present a 90-day team plan.</div>
+          <div class="week-activities">
+            <span class="badge badge-virtual">VILT: Onboarding Best Practices</span>
+            <span class="badge badge-inperson">In-Person: Capstone Presentation</span>
+            <span class="badge badge-mentor">Senior Leader Debrief</span>
+            <span class="badge badge-assess">Leadership Competency Assessment</span>
+            <span class="badge" style="background:var(--mod-rubric)">Competency Rubric</span>
+          </div>
+          <div class="week-loops">
+            <span class="loop-tag">Cumulative loop: All associate curriculum — now teaching it to others</span>
+            <span class="loop-tag">Reinforces: Coaching &amp; Feedback (Weeks 3–4)</span>
+          </div>
+          <div class="outcome-bar"><strong>Learning Outcome:</strong> Supervisor presents a 90-day team development plan and receives leadership certification sign-off.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DESIGN PRINCIPLES -->
+<div class="principles">
+  <h3>Learning and Design Principles Behind This Curriculum</h3>
+  <div class="principles-grid">
+    <div class="principle-item">
+      <h4>Backward Design</h4>
+      <p>Each week begins with a clear learning outcome. Content, activities, and assessments are all designed to achieve that outcome — not the other way around.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Scaffolded Progression</h4>
+      <p>Skills are introduced in a deliberate sequence. Each week builds on the last, and the supervisor curriculum builds explicitly on associate-level competencies.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Spaced Practice &amp; Retrieval</h4>
+      <p>Core topics are revisited at higher levels of application throughout the curriculum. Looping back reinforces retention and deepens understanding over time.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Safe-to-Fail Learning</h4>
+      <p>AI role-play and simulations create low-stakes environments where learners practice complex skills before applying them in real, high-stakes situations.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Blended Modalities</h4>
+      <p>Content is delivered through the right modality for the learning goal — not one-size-fits-all. Conceptual knowledge, applied skills, and reflective practice each have their place.</p>
+    </div>
+    <div class="principle-item">
+      <h4>Career Pathway Thinking</h4>
+      <p>The curriculum is designed as a connected journey, not two separate programs. The supervisor pathway is built to honor and extend what associates already learned.</p>
+    </div>
+  </div>
+</div>
+
+<div class="page-footer">
+  Designed by <strong>Martha K. Paben</strong> · Learning &amp; Development Leader · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="
